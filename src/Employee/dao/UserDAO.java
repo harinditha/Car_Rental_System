@@ -15,13 +15,13 @@ public class UserDAO {
 	private String jdbcUsername = "root";
 	private String jdbcPassword = "root";
 
-	private static final String INSERT_USERS_SQL = "INSERT INTO emp" + "  (name, email, country) VALUES "
-			+ " (?, ?, ?);";
+	private static final String INSERT_USERS_SQL = "INSERT INTO emp" + "  (name, email, country, type) VALUES "
+			+ " (?, ?, ?, ?);";
 
-	private static final String SELECT_USER_BY_ID = "select id,name,email,country from emp where id =?";
+	private static final String SELECT_USER_BY_ID = "select id,name,email,country,type from emp where id =?";
 	private static final String SELECT_ALL_USERS = "select * from emp";
 	private static final String DELETE_USERS_SQL = "delete from emp where id = ?;";
-	private static final String UPDATE_USERS_SQL = "update emp set name = ?,email= ?, country =? where id = ?;";
+	private static final String UPDATE_USERS_SQL = "update emp set name = ?,email= ?, country =?, type=? where id = ?;";
 
 	public UserDAO() {
 	}
@@ -49,6 +49,7 @@ public class UserDAO {
 			preparedStatement.setString(1, user.getName());
 			preparedStatement.setString(2, user.getEmail());
 			preparedStatement.setString(3, user.getCountry());
+			preparedStatement.setString(4, user.getType());
 			System.out.println(preparedStatement);
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
@@ -72,7 +73,8 @@ public class UserDAO {
 				String name = rs.getString("name");
 				String email = rs.getString("email");
 				String country = rs.getString("country");
-				user = new User(id, name, email, country);
+				String type = rs.getString("type");
+				user = new User(id, name, email, country, type);
 			}
 		} catch (SQLException e) {
 			printSQLException(e);
@@ -99,7 +101,8 @@ public class UserDAO {
 				String name = rs.getString("name");
 				String email = rs.getString("email");
 				String country = rs.getString("country");
-				users.add(new User(id, name, email, country));
+				String type = rs.getString("type");
+				users.add(new User(id, name, email, country, type));
 			}
 		} catch (SQLException e) {
 			printSQLException(e);
@@ -124,7 +127,8 @@ public class UserDAO {
 			statement.setString(1, user.getName());
 			statement.setString(2, user.getEmail());
 			statement.setString(3, user.getCountry());
-			statement.setInt(4, user.getId());
+			statement.setString(4, user.getType());
+			statement.setInt(5, user.getId());
 
 			rowUpdated = statement.executeUpdate() > 0;
 		}

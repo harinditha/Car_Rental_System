@@ -15,12 +15,12 @@
 		<nav class="navbar navbar-expand-md navbar-dark"
 			style="background-color: tomato">
 			<div>
-				<a href="https://www.javaguides.net" class="navbar-brand"> User Management App </a>
+				<a class="navbar-brand"> Employee Registration </a>
 			</div>
 
 			<ul class="navbar-nav">
 				<li><a href="<%=request.getContextPath()%>/list"
-					class="nav-link">Users</a></li>
+					class="nav-link">Current Employees</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -61,6 +61,13 @@
 						value="<c:out value='${user.email}' />" class="form-control"
 						name="email">
 				</fieldset>
+				
+				<fieldset class="form-group">
+					<label>User Type</label> <input type="text"
+						value="<c:out value='${user.type}' />" class="form-control"
+						name="type" placeholder = "Driver/Mechanic">
+				</fieldset>
+				
 
 				<fieldset class="form-group">
 					<label>User Country</label> <input type="text"

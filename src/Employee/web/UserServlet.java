@@ -94,7 +94,8 @@ public class UserServlet extends HttpServlet {
 		String name = request.getParameter("name");
 		String email = request.getParameter("email");
 		String country = request.getParameter("country");
-		User newUser = new User(name, email, country);
+		String type = request.getParameter("type");
+		User newUser = new User(name, email, country, type);
 		userDAO.insertUser(newUser);
 		response.sendRedirect("list");
 	}
@@ -105,8 +106,8 @@ public class UserServlet extends HttpServlet {
 		String name = request.getParameter("name");
 		String email = request.getParameter("email");
 		String country = request.getParameter("country");
-
-		User book = new User(id, name, email, country);
+		String type = request.getParameter("type");
+		User book = new User(id, name, email, country, type);
 		userDAO.updateUser(book);
 		response.sendRedirect("list");
 	}
