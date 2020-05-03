@@ -22,6 +22,13 @@
 				<li><a href="<%=request.getContextPath()%>/list"
 					class="nav-link">Current Employees</a></li>
 			</ul>
+			
+			<ul class="navbar-nav">
+				<li><a href="login.jsp"
+					class="nav-link">LOGIN Driver</a></li>
+			</ul>
+			
+			
 		</nav>
 	</header>
 	<br>
@@ -44,6 +51,8 @@
 						<th>ID</th>
 						<th>Name</th>
 						<th>Email</th>
+						<th>Username</th>
+						<th>Password</th>
 						<th>Country</th>
 						<th>Type</th>
 						<th>Actions</th>
@@ -57,6 +66,8 @@
 							<td><c:out value="${user.id}" /></td>
 							<td><c:out value="${user.name}" /></td>
 							<td><c:out value="${user.email}" /></td>
+							<td><c:out value="${user.username}" /></td>
+							<td><c:out value="${user.password}" /></td>
 							<td><c:out value="${user.country}" /></td>
 							<td><c:out value="${user.type}" /></td>
 							<td><a href="edit?id=<c:out value='${user.id}' />">Edit</a>

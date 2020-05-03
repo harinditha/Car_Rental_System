@@ -68,6 +68,18 @@
 						name="type" placeholder = "Driver/Mechanic">
 				</fieldset>
 				
+				<fieldset class="form-group">
+					<label>Username</label> <input type="text"
+						value="<c:out value='${user.username}' />" class="form-control"
+						name="username">
+				</fieldset>
+				
+				<fieldset class="form-group">
+					<label>Password</label> <input type="password"
+						value="<c:out value='${user.password}' />" class="form-control"
+						name="password">
+				</fieldset>
+				
 
 				<fieldset class="form-group">
 					<label>User Country</label> <input type="text"

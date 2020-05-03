@@ -6,25 +6,31 @@ public class User {
 	protected String email;
 	protected String country;
 	protected String type;
+	protected String username;
+    protected String password;
 	
 	public User() {
 	}
 	
-	public User(String name, String email, String country, String type) {
+	public User(String name, String email, String country, String type, String username, String password) {
 		super();
 		this.name = name;
 		this.email = email;
 		this.country = country;
 		this.type = type;
+		this.username = username;
+		this.password = password;
 	}
 
-	public User(int id, String name, String email, String country, String type) {
+	public User(int id, String name, String email, String country, String type, String username, String password) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.email = email;
 		this.country = country;
 		this.type = type;
+		this.username = username;
+		this.password = password;
 	}
 
 	public int getId() {
@@ -57,4 +63,19 @@ public class User {
 	public void setTpe(String type) {
 		this.type = type;
 	}
+	public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }

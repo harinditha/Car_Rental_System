@@ -5,6 +5,13 @@
 		http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
 	id="WebApp_ID" version="3.1">
 	<display-name>Car Rental System</display-name>
+	
+	<welcome-file-list>
+    <welcome-file>user-form.html</welcome-file>
+    <welcome-file>user-form.htm</welcome-file>
+    <welcome-file>user-form.jsp</welcome-file>
+    
+  </welcome-file-list>
 
 	<error-page>
 		<exception-type>java.lang.Exception</exception-type>
